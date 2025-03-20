@@ -33,32 +33,41 @@ Existen varios aspectos clave del código que puedes modificar para personalizar
 En el archivo `style.css`, puedes cambiar el tamaño de la fuente para los diferentes idiomas (español, inglés, japonés) ajustando los siguientes valores:
 
 ```css
-span.español {
+.text-span-es {
   font-size: 3440%;
 }
-span.ingles {
-  font-size: 1100%;
+
+.text-span-en {
+  font-size: 1110%;
 }
-span.japonés {
+
+.text-span-jp {
   font-size: 900%;
 }
 ```
 
 ### 2. Velocidad de Desplazamiento
 
-La velocidad del fondo animado puede ser controlada en el archivo `main.js`, específicamente en la configuración del `setInterval`:
+La velocidad de la animación del fondo animado se controla en el archivo `style.css` dentro de la regla `@keyframes`:
 
-```javascript
-const velocidad = 50; // Ajusta este valor para cambiar la velocidad
+```css
+@keyframes marquee-column {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-270%); }
+}
 ```
+
+Modifica el tiempo de duración (actualmente `150s`) para ajustar la velocidad. Puedes hacerlo reduciendo el tiempo para hacer la animación más rápida (por ejemplo, `100s`), o incrementando el tiempo para que sea más lenta.
 
 ### 3. Dirección del Movimiento
 
-Puedes cambiar la dirección del movimiento de las letras en el archivo `main.js`. Actualmente, el texto se desplaza de derecha a izquierda:
+Puedes cambiar la dirección del movimiento del texto editando el archivo `style.css`. Actualmente, el texto se mueve de izquierda a derecha. Para invertir la dirección, modifica la propiedad `transform` en la regla `@keyframes`:
 
-```javascript
-// Dirección del movimiento: -1 es hacia la izquierda, 1 hacia la derecha
-const direccion = -1; // Cambia a 1 para que se mueva hacia la derecha
+```css
+@keyframes marquee-column {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(270%); } /* Para mover hacia la derecha */
+}
 ```
 
 ### 4. Color del Fondo y el Texto
@@ -67,17 +76,21 @@ En el archivo `style.css`, puedes modificar los colores de fondo y texto del fon
 
 ```css
 .background-marquee {
-  background-color: #000000; /* Cambia este valor para cambiar el color de fondo */
+  background-color: #111; /* Cambia este valor para cambiar el color de fondo */
 }
 
 .marquee {
-  color: #ffffff; /* Cambia este valor para cambiar el color del texto */
+  color: #fff; /* Cambia este valor para cambiar el color del texto */
 }
 ```
 
 ## Contribución
 
 Si deseas mejorar o modificar este proyecto, siéntete libre de hacer un **fork** del repositorio y realizar tus contribuciones. Cualquier mejora será bienvenida.
+
+## Autor
+
+Este proyecto fue creado y mantenido por **AnDev** en GitHub.
 
 ## Licencia
 
