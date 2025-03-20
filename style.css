@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif, 'Noto Sans JP';
+  background: #111;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+p {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #fff;
+  line-height: 1.8;
+  font-size: 1.2em;
+}
+
+.chapter {
+  margin-bottom: 40px;
+}
+
+.chapter h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+/* Fondo animado */
+.background-marquee {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 0px;
+  left: -100px;
+  width: 200vw;
+  height: 100vh;
+  overflow: hidden;
+  user-select: none;
+  z-index: -1;
+}
+
+.marquee {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%) rotate(-7deg);
+  overflow: hidden;
+  gap: 35vw;
+  user-select: none;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  animation: marquee-column 150s linear infinite;
+}
+
+@keyframes marquee-column {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-270%); }
+}
+
+.text-span {
+  font-weight: bold;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* Tamaños de fuente para cada idioma */
+.text-span-es {
+  font-size: 3440%;
+  line-height: 0.6;
+  margin-bottom: 0.2em;
+  transform: translateX(-1%);
+}
+
+.text-span-en { 
+  font-size: 1110%;
+  line-height: 1.2;
+  margin-bottom: 0.1em;
+}
+
+.text-span-jp { 
+  font-size: 900%;
+  line-height: 1.3;
+  margin-bottom: 0.3em;
+}
