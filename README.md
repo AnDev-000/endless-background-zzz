@@ -13,6 +13,10 @@ Es un **fondo animado** que se desplaza de manera continua, y permite personaliz
 - Totalmente personalizable, con variables clave que pueden ser ajustadas en el código.
 - Ideal para usar en sitios web, creando un ambiente dinámico y atractivo.
 
+## 🖱️ Ver en acción
+
+🔗 [Ver animación en acción](https://andev-000.github.io/endless-background-zzz/)
+
 ## Instalación
 
 1. Clona el repositorio:
